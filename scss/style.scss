@@ -76,7 +76,7 @@ body {
   width: 100%;
   margin: 0 auto;
   color: $whiteColor;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   font-weight: 700;
   font-family: "Lato", sans-serif;
@@ -113,6 +113,14 @@ body {
   padding: 24px 0;
 }
 
+.footer {
+  margin-top: 96px;
+
+  @media screen and (min-width: $laptopWidth) {
+    margin-top: 48px;
+  }
+}
+
 .header__wrapper,
 .footer__wrapper {
   @include flex(row, center, space-between);
@@ -133,15 +141,19 @@ body {
 
     &:hover,
     &:focus {
-      color: $whiteColor;
+      color: $yellowColor;
     }
   }
 }
 
 .section {
-  padding: 96px 0;
+  padding: 96px 0 0;
   position: relative;
   z-index: 0;
+
+  &--padding-big {
+    padding: 96px 0;
+  }
 }
 
 .section__wrapper {
@@ -149,6 +161,7 @@ body {
 }
 
 .title {
+  font-weight: 900;
   margin: 0 0 24px;
 
   &--big {
@@ -169,6 +182,7 @@ body {
   
   &--small {
     font-size: 2.8rem;
+    margin-bottom: 12px;
 
     @media screen and (min-width: $laptopWidth) {
       font-size: 3.5rem;
@@ -179,11 +193,11 @@ body {
 .text-wrapper {
   margin: 0 auto;
   max-width: 500px;
-  padding: 7.5px;
+  padding: 8px 16px;
   background-color: $blackColor;
 
   @media screen and (min-width: $laptopWidth) {
-    max-width: 900px;
+    max-width: 800px;
   }
 }
 
@@ -355,7 +369,7 @@ body {
 
   &:hover,
   &:focus {
-    color: $grayColor;
+    color: $yellowColor;
   }
 
   @media screen and (min-width: $laptopWidth) {
@@ -364,7 +378,7 @@ body {
       width: 105%;
       height: 2px;
       border-radius: 15px;
-      background-color: $whiteColor;
+      background-color: $yellowColor;
       position: absolute;
       left: -2.5%;
       bottom: -0.5px;
@@ -436,29 +450,167 @@ body {
   left: 0;
   z-index: -1;
 
-  &::before {
-    content: "";
-    width: 31%;
-    height: 60%;
-    background-image: -o-radial-gradient(circle, $grayColor 1%, transparent 20%), -o-radial-gradient(circle, $grayColor 1%, transparent 20%);
-    background-image: radial-gradient(circle, $grayColor 1%, transparent 20%), radial-gradient(circle, $grayColor 1%, transparent 20%);
-    background-size: 10px 10px;
-    position: absolute;
-    top: 10%;
-    left: 0;
-    z-index: -1;
-  }
-
+  &::before,
   &::after {
     content: "";
     width: 31%;
-    height: 70%;
     background-image: -o-radial-gradient(circle, $whiteColor 1%, transparent 10%), -o-radial-gradient(circle, $whiteColor 1%, transparent 10%);
     background-image: radial-gradient(circle, $whiteColor 1%, transparent 10%), radial-gradient(circle, $whiteColor 1%, transparent 10%);
     background-size: 20px 20px;
     position: absolute;
-    right: 0;
-    bottom: 0;
     z-index: -1;
   }
+
+  &::before {
+    height: 60%;
+    top: 10%;
+    left: 0;
+  }
+
+  &::after {
+    height: 70%;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.section__header {
+  position: relative;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $laptopWidth) {
+    margin-bottom: 80px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: 30%;
+    height: 100%;
+    background-image: -o-radial-gradient(circle, $grayColor 1%, transparent 20%), -o-radial-gradient(circle, $grayColor 1%, transparent 20%);
+    background-image: radial-gradient(circle, $grayColor 1%, transparent 20%), radial-gradient(circle, $grayColor 1%, transparent 20%);
+    background-size: 10px 10px;
+    position: absolute;
+    top: 0;
+
+    @media screen and (min-width: $tabletWidth) {
+      width: 35%;
+    }
+
+    @media screen and (min-width: $laptopWidth) {
+      width: 40%;
+    }
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  .title {
+    max-width: 250px;
+    margin: 0 auto;
+    background-color: $blackColor;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: $laptopWidth) {
+      max-width: 300px;
+    }
+  }
+}
+
+.container {
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+
+  @media screen and (min-width: $tabletWidth) {
+    gap: 24px;
+  }
+
+  @media screen and (min-width: $laptopWidth) {
+    margin-bottom: 56px;
+  }
+}
+
+.container__item {
+  width: 300px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tabletWidth) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $laptopWidth) {
+    margin-bottom: 48px;
+  }
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 3px solid $whiteColor;
+  border-radius: 15px;
+  margin-bottom: 24px;
+  @include flex(row, center, center);
+  position: relative;
+
+  .title {
+    padding: 0px 16px;
+    margin: 0;
+    color: $blackColor;
+    background-color: $whiteColor;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+    top: -2.5px;
+    left: -2.5px;
+  }
+}
+
+.btn {
+  border-radius: 50px;
+  border: 3px solid $whiteColor;
+  font-weight: 700;
+  text-decoration: none;
+
+  &--fill {
+    padding: 8px 16px;
+    color: $blackColor;
+    background-color: $whiteColor;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:focus {
+      background-color: $yellowColor;
+      border-color: $yellowColor;
+    }
+  }
+
+  &--border {
+    padding: 16px 48px;
+    color: $whiteColor;
+    background-color: transparent;
+    transition: border-color 0.2s;
+
+    &:hover,
+    &:focus {
+      border-color: $yellowColor;
+    }
+  }
+
+  img {
+    height: 1.8rem;
+    margin-right: 6px;
+  }
+}
+
+.modal {
+  display: none;
 }
