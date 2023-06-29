@@ -24,8 +24,28 @@ function showHamburgerMenu() {
   hamburger.addEventListener('click', handleClick);
 };
 
+function showModal() {
+  const buttons = document.querySelectorAll('.btn--code');
+  const modals = document.querySelectorAll('.modal');
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+
+      for (let j = 0; j < modals.length; j++) {
+        modals[i].classList.add('show-modal');
+
+        modals[i].querySelector('.close').addEventListener('click', function() {
+          modals[i].classList.remove('show-modal');
+        })
+
+      }
+    })
+  }
+}
+
 const init = function () {
   showHamburgerMenu();
+  showModal();
 };
 
 document.addEventListener('DOMContentLoaded', init);
