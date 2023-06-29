@@ -137,6 +137,8 @@ body {
 
   a {
     color: $grayColor;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
     transition: color 0.2s;
 
     &:hover,
@@ -153,6 +155,10 @@ body {
     padding: 80px 0;
     position: relative;
     z-index: 0;
+  }
+
+  &--padding-small {
+    padding: 80px 0 40px;
   }
 }
 
@@ -516,14 +522,15 @@ body {
     z-index: 1;
 
     @media screen and (min-width: $laptopWidth) {
-      max-width: 300px;
+      max-width: 350px;
     }
   }
 }
 
 .container {
   @include flex(row, center, center);
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 48px;
   position: relative;
@@ -540,7 +547,6 @@ body {
 .container__item {
   width: 300px;
   margin-bottom: 24px;
-  // position: relative;
 
   @media screen and (min-width: $tabletWidth) {
     margin-bottom: 24px;
@@ -584,6 +590,8 @@ body {
   &--fill {
     color: $blackColor;
     background-color: $whiteColor;
+    -webkit-transition: background-color 0.2s, border-color 0.2s;
+    -o-transition: background-color 0.2s, border-color 0.2s;
     transition: background-color 0.2s, border-color 0.2s;
 
     &:hover,
@@ -594,36 +602,30 @@ body {
   }
 
   &--border {
+    max-width: 350px;
     padding: 12px 48px;
     color: $whiteColor;
     background-color: transparent;
+    -webkit-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
     transition: border-color 0.2s;
+    @include flex(row, center, center);
+    gap: 8px;
+    margin: 0 auto;
 
     &:hover,
     &:focus {
       border-color: $yellowColor;
     }
-  }
 
-  &--copy {
-    padding: 8px 24px;
-    border-color: $blackColor;
-
-    &:hover,
-    &:focus {
-      border-color: $blackColor;
+    img {
+      height: 1.8rem;
     }
-  }
-
-  img {
-    height: 1.8rem;
-    margin-right: 6px;
   }
 }
 
 .modal {
   width: 95%;
-  // height: 95vh;
   background-color: $whiteColor;
   border-radius: 15px;
   padding: 48px 24px;
@@ -635,7 +637,6 @@ body {
   overflow-y: scroll;
 
   @media screen and (min-width: $tabletWidth) {
-    // height: 100vh;
     padding: 24px;
   }
 
@@ -662,6 +663,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  -webkit-transition: border-color 0.2s;
+  -o-transition: border-color 0.2s;
   transition: border-color 0.2s;
 
   &:hover,
@@ -677,7 +680,11 @@ body {
   gap: 8px;
 
   @media screen and (min-width: $tabletWidth) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 }
@@ -698,7 +705,7 @@ body {
   text-align: left;
 
   @media screen and (min-width: $laptopWidth) {
-    height: 300px;
+    height: 400px;
   }
 }
 
@@ -708,7 +715,6 @@ body {
   padding: 16px;
   background-color: $blackColor;
   border-radius: 15px;
-  margin-bottom: 12px;
   @include flex(column, flex-start, flex-start);
   overflow-y: scroll;
 }
@@ -716,3 +722,11 @@ body {
 .show-modal {
   display: block;
 }
+
+/* BUTTONS */
+
+/* BACKGROUNDS */
+
+/* TEXTS */
+
+/* ANIMATIONS */
