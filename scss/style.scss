@@ -678,45 +678,42 @@ body {
   height: 100%;
   @include flex(column, center, center);
   gap: 8px;
-
-  @media screen and (min-width: $tabletWidth) {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
 }
 
 .code-wrapper {
+  width: 100%;
   @include flex(column, center, center);
+  gap: 12px;
+
+  @media screen and (min-width: $tabletWidth) {
+    @include flex(row, center, space-between);
+    gap: 24px;
+  }
 }
 
 .code-name {
   color: $blackColor;
   font-weight: 900;
-}
 
-.pre {
-  width: 300px;
-  height: 150px;
-  @include flex(column, space-between, center);
-  text-align: left;
-
-  @media screen and (min-width: $laptopWidth) {
-    height: 400px;
+  @media screen and (min-width: $tabletWidth) {
+    width: 100px;
   }
 }
 
 .code {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 124px;
+  text-align: left;
   padding: 16px;
   background-color: $blackColor;
   border-radius: 15px;
   @include flex(column, flex-start, flex-start);
   overflow-y: scroll;
+  line-height: 1;
+
+  p {
+    width: 100%;
+  }
 }
 
 .show-modal {
@@ -726,6 +723,38 @@ body {
 /* BUTTONS */
 
 /* BACKGROUNDS */
+.background {
+  border-radius: 15px;
+}
+
+.background-1 {
+  width: 100%;
+  height: 100%;
+  background-color: #1C77D2;
+  background-size: 30px 30px;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%), linear-gradient(90deg, rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+}
+
+.background-2 {
+  width: 100%;
+  height: 100%;
+  background-image: -o-radial-gradient(circle, #1C77D2 1%, transparent 20%), -o-radial-gradient(circle, #1C77D2 1%, transparent 20%);
+  background-image: radial-gradient(circle, #1C77D2 1%, transparent 20%), radial-gradient(circle, #1C77D2 1%, transparent 20%);
+  background-size: 10px 10px;
+}
+
+.background-3 {
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(-45deg, #069991 0, #069991 10px, transparent 20px, transparent 40px);
+}
+
+.background-4 {
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(45deg, #069991 0, #069991 20px, transparent 20px, transparent 40px),
+  repeating-linear-gradient(-45deg, #04716c 0, #04716c 20px, transparent 20px, transparent 40px);
+}
 
 /* TEXTS */
 
