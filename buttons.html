@@ -68,6 +68,7 @@
             <div class="container__item">
               <div class="box">
                 <h3 class="title title--small">1</h3>
+                <a href="#" class="btn-1 btn-1__draw-border">Click</a>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
@@ -76,19 +77,89 @@
                   <div class="code-wrapper">
                     <div class="code-name">HTML</div>
                     <code class="code">
-                      <p>&lt;h1&gt;Hello&lt;/h1&gt;</p>
+                      <p>&lt;a href="#" class="btn-1 btn-1__draw-border"&gt;Click&lt;/a&gt;</p>
                     </code>
                   </div>
                   <div class="code-wrapper">
                     <div class="code-name">CSS</div>
                     <code class="code">
-                      <p>xyz</p>
-                    </code>
-                  </div>
-                  <div class="code-wrapper">
-                    <div class="code-name">JavaScript</div>
-                    <code class="code">
-                      <p>console.log('xyz');</p>
+                      <p>
+                        .btn-1 {
+                          color: #fff;
+                          text-transform: uppercase;
+                          text-decoration: none;
+                          font-size: 2rem;
+                          padding: 24px 48px;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border {
+                          -webkit-box-shadow: inset 0 0 0 2.5px #fff;
+                          box-shadow: inset 0 0 0 2.5px #fff;
+                          color: #fff;
+                          -webkit-transition: color 0.3s;
+                          -o-transition: color 0.3s;
+                          transition: color 0.3s;
+                          position: relative;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border::before,
+                        .btn-1__draw-border::after {
+                          content: "";
+                          -webkit-box-sizing: border-box;
+                          box-sizing: border-box;
+                          border: 0 solid transparent;
+                          pointer-events: none;
+                          position: absolute;
+                          width: 0;
+                          height: 0;
+                          bottom: 0;
+                          right: 0;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border::before {
+                          border-bottom-width: 2.5px;
+                          border-left-width: 2.5px;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border::after {
+                          border-top-width: 2.5px;
+                          border-right-width: 2.5px;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border:hover {
+                          color: #F6C350;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border:hover::before,
+                        .btn-1__draw-border:hover::after {
+                          width: 100%;
+                          height: 100%;
+                          border-color: #F6C350;
+                          -webkit-transition: border-color 0s, width 0.3s, height 0.3s;
+                          -o-transition: border-color 0s, width 0.3s, height 0.3s;
+                          transition: border-color 0s, width 0.3s, height 0.3s;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border:hover::before {
+                          -webkit-transition-delay: 0s, 0s, 0.3s;
+                          -o-transition-delay: 0s, 0s, 0.3s;
+                          transition-delay: 0s, 0s, 0.3s;
+                        }
+                        <br />
+                        <br />
+                        .btn-1__draw-border:hover::after {
+                          -webkit-transition-delay: 0s, 0.3s, 0s;
+                          -o-transition-delay: 0s, 0.3s, 0s;
+                          transition-delay: 0s, 0.3s, 0s;
+                        }
+                      </p>
                     </code>
                   </div>
                 </div>
@@ -96,7 +167,221 @@
             </div>
             <div class="container__item">
               <div class="box">
-                <h3 class="title title--small">1</h3>
+                <h3 class="title title--small">2</h3>            
+                <a href="#" class="btn-2">
+                  <span class="btn-2__span"></span>
+                  <span class="btn-2__span"></span>
+                  <span class="btn-2__span"></span>
+                  <span class="btn-2__span"></span>
+                  Click
+                </a>
+              </div>
+              <button class="btn btn--fill btn--code">Get code</button>
+              <div class="modal">
+                <button class="close"><img src="img/xmark-solid.svg" alt="close modal" height="32" /></button>
+                <div class="modal__wrapper">
+                  <div class="code-wrapper">
+                    <div class="code-name">HTML</div>
+                    <code class="code">
+                      <p>
+                        &lt;a href="#" class="btn-2"&gt;
+                          &lt;span class="btn-2__span"&gt;&lt;/span&gt;
+                          &lt;span class="btn-2__span"&gt;&lt;/span&gt;
+                          &lt;span class="btn-2__span"&gt;&lt;/span&gt;
+                          &lt;span class="btn-2__span"&gt;&lt;/span&gt;
+                          Click
+                        &lt;/a&gt;
+                      </p>
+                    </code>
+                  </div>
+                  <div class="code-wrapper">
+                    <div class="code-name">CSS</div>
+                    <code class="code">
+                      <p>
+                        .btn-2 {
+                          color: rgba(247, 14, 151, 1);
+                          text-transform: uppercase;
+                          text-decoration: none;
+                          font-size: 20px;
+                          padding: 20px 40px;
+                          -webkit-box-shadow: 0 2px 2px #1c1e1f;
+                          box-shadow: 0 2px 2px #1c1e1f;
+                          position: relative;
+                          overflow: hidden;
+                        }
+                        <br />
+                        <br />
+                        .btn-2__span:nth-child(1) {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 2px;
+                          background: -webkit-gradient(linear, left top, right top, from(rgba(247, 14, 151, 1)), to(rgba(247, 14, 151, 0.7)));
+                          background: -o-linear-gradient(left, rgba(247, 14, 151, 1), rgba(247, 14, 151, 0.7));
+                          background: linear-gradient(to right, rgba(247, 14, 151, 1), rgba(247, 14, 151, 0.7));
+                          -webkit-animation: btn-2-animate-1 2s linear infinite;
+                          animation: btn-2-animate-1 2s linear infinite;
+                        }
+                        <br />
+                        <br />
+                        @-webkit-keyframes btn-2-animate-1 {
+                          0% {
+                            -webkit-transform: translateX(-100%);
+                            transform: translateX(-100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateX(100%);
+                            transform: translateX(100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        @keyframes btn-2-animate-1 {
+                          0% {
+                            -webkit-transform: translateX(-100%);
+                            transform: translateX(-100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateX(100%);
+                            transform: translateX(100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        .btn-2__span:nth-child(2) {
+                          position: absolute;
+                          top: 0;
+                          right: 0;
+                          width: 2px;
+                          height: 100%;
+                          background: -webkit-gradient(linear, left top, left bottom, from(rgba(247, 14, 151, 1)), to(rgba(247, 14, 151, 0.7)));
+                          background: -o-linear-gradient(top, rgba(247, 14, 151, 1), rgba(247, 14, 151, 0.7));
+                          background: linear-gradient(to bottom, rgba(247, 14, 151, 1), rgba(247, 14, 151, 0.7));
+                          -webkit-animation: btn-2-animate-2 2s linear infinite;
+                          animation: btn-2-animate-2 2s linear infinite;
+                          -webkit-animation-delay: 1s;
+                          animation-delay: 1s;
+                        }
+                        <br />
+                        <br />
+                        @-webkit-keyframes btn-2-animate-2 {
+                          0% {
+                            -webkit-transform: translateY(-100%);
+                            transform: translateY(-100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateY(100%);
+                            transform: translateY(100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        @keyframes btn-2-animate-2 {
+                          0% {
+                            -webkit-transform: translateY(-100%);
+                            transform: translateY(-100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateY(100%);
+                            transform: translateY(100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        .btn-2__span:nth-child(3) {
+                          position: absolute;
+                          bottom: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 2px;
+                          background: -webkit-gradient(linear, right top, left top, from(rgba(247, 14, 151, 1)), to(rgba(247, 14, 151, 0.7)));
+                          background: -o-linear-gradient(right, rgba(247, 14, 151, 1), rgba(247, 14, 151, 0.7));
+                          background: linear-gradient(to left, rgba(247, 14, 151, 1), rgba(247, 14, 151, 0.7));
+                          -webkit-animation: btn-2-animate-3 2s linear infinite;
+                          animation: btn-2-animate-3 2s linear infinite;
+                        }
+                        <br />
+                        <br />
+                        @-webkit-keyframes btn-2-animate-3 {
+                          0% {
+                            -webkit-transform: translateX(100%);
+                            transform: translateX(100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateX(-100%);
+                            transform: translateX(-100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        @keyframes btn-2-animate-3 {
+                          0% {
+                            -webkit-transform: translateX(100%);
+                            transform: translateX(100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateX(-100%);
+                            transform: translateX(-100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        .btn-2__span:nth-child(4) {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 2px;
+                          height: 100%;
+                          background: -webkit-gradient(linear, left bottom, left top, from(#1c1e1f), to(rgba(247, 14, 151, 0.7)));
+                          background: -o-linear-gradient(bottom, #1c1e1f, rgba(247, 14, 151, 0.7));
+                          background: linear-gradient(to top, #1c1e1f, rgba(247, 14, 151, 0.7));
+                          -webkit-animation: btn-2-animate-4 2s linear infinite;
+                          animation: btn-2-animate-4 2s linear infinite;
+                          -webkit-animation-delay: 1s;
+                          animation-delay: 1s;
+                        }
+                        <br />
+                        <br />
+                        @-webkit-keyframes btn-2-animate-4 {
+                          0% {
+                            -webkit-transform: translateY(100%);
+                            transform: translateY(100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateY(-100%);
+                            transform: translateY(-100%);
+                          }
+                        }
+                        <br />
+                        <br />
+                        @keyframes btn-2-animate-4 {
+                          0% {
+                            -webkit-transform: translateY(100%);
+                            transform: translateY(100%);
+                          }
+                        
+                          100% {
+                            -webkit-transform: translateY(-100%);
+                            transform: translateY(-100%);
+                          }
+                        }
+                      </p>
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container__item">
+              <div class="box">
+                <h3 class="title title--small">3</h3>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
@@ -125,7 +410,7 @@
             </div>
             <div class="container__item">
               <div class="box">
-                <h3 class="title title--small">1</h3>
+                <h3 class="title title--small">4</h3>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
@@ -154,7 +439,7 @@
             </div>
             <div class="container__item">
               <div class="box">
-                <h3 class="title title--small">1</h3>
+                <h3 class="title title--small">5</h3>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
@@ -183,7 +468,7 @@
             </div>
             <div class="container__item">
               <div class="box">
-                <h3 class="title title--small">1</h3>
+                <h3 class="title title--small">6</h3>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
@@ -212,7 +497,7 @@
             </div>
             <div class="container__item">
               <div class="box">
-                <h3 class="title title--small">1</h3>
+                <h3 class="title title--small">7</h3>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
@@ -241,36 +526,7 @@
             </div>
             <div class="container__item">
               <div class="box">
-                <h3 class="title title--small">1</h3>
-              </div>
-              <button class="btn btn--fill btn--code">Get code</button>
-              <div class="modal">
-                <button class="close"><img src="img/xmark-solid.svg" alt="close modal" height="32" /></button>
-                <div class="modal__wrapper">
-                  <div class="code-wrapper">
-                    <div class="code-name">HTML</div>
-                    <code class="code">
-                      <p>&lt;h1&gt;Hello&lt;/h1&gt;</p>
-                    </code>
-                  </div>
-                  <div class="code-wrapper">
-                    <div class="code-name">CSS</div>
-                    <code class="code">
-                      <p>.button{color: yellow; background: blue;}</p>
-                    </code>
-                  </div>
-                  <div class="code-wrapper">
-                    <div class="code-name">JavaScript</div>
-                    <code class="code">
-                      <p>console.log('Hello');</p>
-                    </code>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container__item">
-              <div class="box">
-                <h3 class="title title--small">1</h3>
+                <h3 class="title title--small">8</h3>
               </div>
               <button class="btn btn--fill btn--code">Get code</button>
               <div class="modal">
