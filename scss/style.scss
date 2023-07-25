@@ -1028,6 +1028,66 @@ body {
   background-size: 30px 30px;
 }
 
+.background-12 {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg, #000 0, #000 40px, #F6C350 40px, #F6C350 80px);
+}
+
+.background-13 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    background: repeating-linear-gradient(0deg, #000 0, #000 40px, #fff 40px, #fff 80px);
+  }
+
+  &::after {
+    background: repeating-linear-gradient(90deg, #000 0, #000 40px, #fff 40px, #fff 80px);
+    mix-blend-mode: difference;
+  }
+}
+
+.background-14 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    background: repeating-linear-gradient(45deg, #000 0, #000 40px, #fff 40px, #fff 80px);
+  }
+
+  &::after {
+    background: repeating-linear-gradient(-45deg, #000 0, #000 40px, #fff 40px, #fff 80px);
+    mix-blend-mode: difference;
+  }
+}
+
 /* TEXTS */
 
 /* ANIMATIONS */
